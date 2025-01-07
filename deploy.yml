@@ -1,0 +1,43 @@
+---
+- name: Deploy TGID Project
+  hosts: webserver
+  become: yes
+  vars:
+    backend_jar_path: "/home/ubuntu/tgid/Backend/target/risk-assessment-0.0.1-SNAPSHOT.jar"
+    frontend_build_path: "/home/ubuntu/tgid/Frontend/build/"
+    app_port: 9192
+
+  tasks:
+
+    - name: Stop existing backend service
+      ansible.builtin.shell: "pkill -f 'java.*risk-assessment'"
+      ignore_errors: yes
+
+    - name: Deploy Backend
+      ansible.builtin.copy:
+        src: "{{ backend_jar_path }}"
+        dest: "/opt/risk-assessment.jar"
+        mode: '0755'
+
+    - name: Start Backend Service
+      ansible.builtin.shell: "nohup java -jar /opt/risk-assessment.jar --server.port={{ app_port }} &"
+      async: 0
+      poll: 0
+
+    - name: Remove existing Frontend
+      ansible.builtin.file:
+        path: "/var/www/html"
+        state: absent
+
+    - name: Deploy Frontend
+      ansible.builtin.copy:
+        src: "{{ frontend_build_path }}"
+        dest: "/var/www/html/"
+        mode: '0755'
+
+    - name: Restart Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+
+
