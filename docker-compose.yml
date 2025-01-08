@@ -26,12 +26,11 @@ services:
       - backend
 
   mysql_db:
-    image: mysql:8
+    image: mysql
     ports:
-      - "3307:3306"
+      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: risk_db
+      MYSQL_DATABASE: current
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
