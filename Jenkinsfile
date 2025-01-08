@@ -10,6 +10,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker-compose down -v || true'
+                    sh 'docker network rm risk-network'
                 }
             }
         }
