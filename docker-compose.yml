@@ -1,49 +1,47 @@
 version: '3.8'
 
 services:
+  mysql_db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: current
+      MYSQL_USER: sejal
+      MYSQL_PASSWORD: sejal
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "sejal", "-psejal"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - risk-network
+
   backend:
     image: sejal28/risk-backend
-    container_name: finance-dashboard-backend
     ports:
       - "9192:9192"
     depends_on:
       mysql_db:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://finance-dashboard-mysql_db:3307/current?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://finance-dashboard-mysql_db:3306/current?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: sejal
       SPRING_DATASOURCE_PASSWORD: sejal
     networks:
       - risk-network
-    restart: on-failure
 
   frontend:
     image: sejal28/risk-frontend
-    build: ./Frontend
     ports:
       - "3000:3000"
-    networks:
-      - risk-network
     depends_on:
       - backend
-
-  mysql_db:
-    image: mysql:8
-    ports:
-      - "3307:3306"
-    environment:
-      MYSQL_DATABASE: current
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: sejal
-      MYSQL_PASSWORD: sejal
-    volumes:
-      - mysql_data:/var/lib/mysql
     networks:
       - risk-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      retries: 3
-      timeout: 5s
 
 networks:
   risk-network:
