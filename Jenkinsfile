@@ -6,11 +6,14 @@ pipeline {
     }
 
     stages {
+
         stage('Cleanup') {
             steps {
                 script {
-                    sh 'docker-compose down -v || true'
-                    sh 'docker network rm risk-network'
+                    sh '''
+                    docker-compose down -v || true
+                    docker network rm risk-network || true
+                    '''
                 }
             }
         }
@@ -25,15 +28,14 @@ pipeline {
 
         stage('Create Network') {
             steps {
-                sh 'docker network create risk-network'
-                sleep 5
+                sh 'docker network create risk-network || true'
             }
         }
 
         stage('Maven Build') {
             steps {
                 dir('./Backend') {
-                    sh "mvn clean package"
+                    sh 'mvn clean package'
                 }
             }
         }
@@ -62,13 +64,33 @@ pipeline {
             }
         }
 
-        stage('Start Docker Compose stack') {
+        stage('Start Docker Compose Stack') {
             steps {
                 script {
                     sh '''
-                    docker rm -f risk-mysql-db risk-backend risk-frontend || true
                     docker-compose up -d
                     '''
+                }
+            }
+        }
+
+        stage('Wait for MySQL to be ready') {
+            steps {
+                script {
+                    sh '''
+                    echo "Waiting for MySQL to be ready..."
+                    sleep 20
+                    '''
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    dir('./Backend') {
+                        sh 'mvn test'
+                    }
                 }
             }
         }
