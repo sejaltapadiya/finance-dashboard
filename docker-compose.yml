@@ -1,19 +1,19 @@
 version: '3.8'
 
 services:
-  backend:
+ backend:
     image: sejal28/risk-backend
-    build: ./Backend
+    container_name: finance-dashboard-backend
     ports:
       - "9192:9192"
+    depends_on:
+      mysql_db:
+        condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_db:3306/current
+      SPRING_DATASOURCE_URL: jdbc:mysql://finance-dashboard-mysql_db:3306/current?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: sejal
       SPRING_DATASOURCE_PASSWORD: sejal
-    networks:
-      - risk-network
-    depends_on:
-      - mysql_db
+    restart: on-failure
 
   frontend:
     image: sejal28/risk-frontend
