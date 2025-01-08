@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_REPO_URL = 'https://github.com/sejaltapadiya/RiskAssessment.git'
+        GITHUB_REPO_URL = 'https://github.com/sejaltapadiya/finance-dashboard.git'
     }
 
     stages {
