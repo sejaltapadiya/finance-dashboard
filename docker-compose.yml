@@ -28,7 +28,7 @@ services:
   mysql_db:
     image: mysql:8
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: risk_db
