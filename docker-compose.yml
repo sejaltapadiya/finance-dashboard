@@ -3,6 +3,7 @@ version: '3.8'
 services:
   mysql_db:
     image: mysql:8
+    container_name: risk-mysql-db
     ports:
       - "3306:3306"
     environment:
@@ -22,13 +23,14 @@ services:
 
   backend:
     image: sejal28/risk-backend
+    container_name: risk-backend
     ports:
       - "9192:9192"
     depends_on:
       mysql_db:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306:3306/current?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_db:3306/current?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: sejal
       SPRING_DATASOURCE_PASSWORD: sejal
     networks:
@@ -36,6 +38,7 @@ services:
 
   frontend:
     image: sejal28/risk-frontend
+    container_name: risk-frontend
     ports:
       - "3000:3000"
     depends_on:
