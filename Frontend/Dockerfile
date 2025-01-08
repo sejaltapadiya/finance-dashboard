@@ -16,21 +16,4 @@ COPY . .
 
 # Build the frontend for production
 RUN npm run build
-
-# Stage 2: Serve the built frontend using NGINX
-FROM nginx:stable-alpine
-
-# Set the working directory for NGINX
-WORKDIR /usr/share/nginx/html
-
-# Remove the default NGINX static files
-RUN rm -rf ./*
-
-# Copy the built frontend from the previous stage
-COPY --from=build /Frontend/build .
-
-# Expose the default port for NGINX
-EXPOSE 80
-
-# Start NGINX server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "start"]
