@@ -12,7 +12,6 @@ pipeline {
                     sh '''
                     docker rm -f risk-frontend || true
                     docker rm -f risk-backend || true
-                    docker rm -f risk-mysql-db || true
                     docker network rm risk-network || true
                     '''
                 }
