@@ -10,7 +10,7 @@ services:
       mysql_db:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://finance-dashboard-mysql_db:3306/current?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://finance-dashboard-mysql_db:3307/current?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: sejal
       SPRING_DATASOURCE_PASSWORD: sejal
     networks:
@@ -30,7 +30,7 @@ services:
   mysql_db:
     image: mysql:8
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_DATABASE: current
       MYSQL_ROOT_PASSWORD: root
