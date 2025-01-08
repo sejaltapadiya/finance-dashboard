@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
- backend:
+  backend:
     image: sejal28/risk-backend
     container_name: finance-dashboard-backend
     ports:
@@ -13,6 +13,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://finance-dashboard-mysql_db:3306/current?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: sejal
       SPRING_DATASOURCE_PASSWORD: sejal
+    networks:
+      - risk-network
     restart: on-failure
 
   frontend:
@@ -31,14 +33,20 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: current
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: sejal
+      MYSQL_PASSWORD: sejal
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
       - risk-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      retries: 3
+      timeout: 5s
 
 networks:
   risk-network:
 
 volumes:
   mysql_data:
-
