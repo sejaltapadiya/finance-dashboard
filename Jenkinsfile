@@ -13,6 +13,8 @@ pipeline {
                     sh '''
                     docker-compose down -v || true
                     docker network rm risk-network || true
+                    docker rm -f elasticsearch || true
+                    docker rm -f sonarqube || true
                     '''
                 }
             }
