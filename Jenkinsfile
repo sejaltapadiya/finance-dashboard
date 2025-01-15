@@ -32,12 +32,21 @@ pipeline {
             }
         }
 
+        stage('Start Elasticsearch and SonarQube') {
+            steps {
+                script {
+                    sh '''
+                    docker-compose up -d elasticsearch sonarqube
+                    '''
+                }
+            }
+        }
+
         stage('Maven Build') {
             steps {
                 dir('./Backend') {
                     sh 'mvn clean package'
                     sh 'mvn clean install -DskipTests'
-
                 }
             }
         }
