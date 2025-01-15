@@ -21,3 +21,38 @@
       service:
         name: nginx
         state: restarted
+        
+    - name: Pull Elasticsearch image
+      docker_image:
+        name: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+        source: pull
+
+    - name: Start Elasticsearch container
+      docker_container:
+        name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+        state: started
+        restart_policy: always
+        published_ports:
+          - "9200:9200"
+          - "9300:9300"
+        environment:
+          - discovery.type=single-node
+
+    - name: Pull SonarQube image
+      docker_image:
+        name: sonarqube:10.6-community
+        source: pull
+
+    - name: Start SonarQube container
+      docker_container:
+        name: sonarqube
+        image: sonarqube:10.6-community
+        state: started
+        restart_policy: always
+        published_ports:
+          - "9000:9000"
+        environment:
+          - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+        depends_on:
+          - elasticsearch
