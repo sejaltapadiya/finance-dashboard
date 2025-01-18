@@ -2,18 +2,19 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_REPO_URL = 'https://github.com/sejaltapadiya/RiskAssessment.git'
+        GITHUB_REPO_URL = 'https://github.com/sejaltapadiya/finance-dashboard.git'
     }
 
     stages {
+
         stage('Cleanup') {
             steps {
                 script {
                     sh '''
-                    docker rm -f risk-frontend || true
-                    docker rm -f risk-backend || true
-                    docker rm -f risk-mysql-db || true
+                    docker-compose down -v || true
                     docker network rm risk-network || true
+                    docker rm -f elasticsearch || true
+                    docker rm -f sonarqube || true
                     '''
                 }
             }
@@ -29,15 +30,25 @@ pipeline {
 
         stage('Create Network') {
             steps {
-                sh 'docker network create risk-network'
-                sleep 5
+                sh 'docker network create risk-network || true'
+            }
+        }
+
+        stage('Start Elasticsearch and SonarQube') {
+            steps {
+                script {
+                    sh '''
+                    docker-compose up -d elasticsearch sonarqube
+                    '''
+                }
             }
         }
 
         stage('Maven Build') {
             steps {
                 dir('./Backend') {
-                    sh "mvn clean package"
+                    sh 'mvn clean package'
+                    sh 'mvn clean install -DskipTests'
                 }
             }
         }
@@ -66,13 +77,33 @@ pipeline {
             }
         }
 
-        stage('Start Docker Compose stack') {
+        stage('Start Docker Compose Stack') {
             steps {
                 script {
                     sh '''
-                    docker rm -f risk-mysql-db risk-backend risk-frontend || true
                     docker-compose up -d
                     '''
+                }
+            }
+        }
+
+        stage('Wait for MySQL to be ready') {
+            steps {
+                script {
+                    sh '''
+                    echo "Waiting for MySQL to be ready..."
+                    sleep 20
+                    '''
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    dir('./Backend') {
+                        sh 'mvn test'
+                    }
                 }
             }
         }
@@ -87,4 +118,3 @@ pipeline {
         }
     }
 }
-

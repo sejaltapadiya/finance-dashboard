@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="" />
+    <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/repository/RiskDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/repository/RiskDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Table.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,23 +32,52 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2qLh78SorO6HTsof47Tqhj4T6Sl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sejal/SPE/RiskAssessment/Finance-dashboard/Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="RiskAssessmentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="risk-assessment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.riskassessment.RiskAssessmentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,6 +87,19 @@
       <option name="presentableId" value="Default" />
       <updated>1734447593088</updated>
       <workItem from="1734447594987" duration="110000" />
+      <workItem from="1736313971173" duration="3044000" />
+      <workItem from="1736375220626" duration="1103000" />
+      <workItem from="1736940899159" duration="600000" />
+      <workItem from="1736955043187" duration="130000" />
+      <workItem from="1737008063904" duration="637000" />
+      <workItem from="1737009180518" duration="414000" />
+      <workItem from="1737015808769" duration="40000" />
+      <workItem from="1737015857990" duration="1234000" />
+      <workItem from="1737025603170" duration="739000" />
+      <workItem from="1737035569214" duration="332000" />
+      <workItem from="1737136996348" duration="4115000" />
+      <workItem from="1737175749266" duration="5764000" />
+      <workItem from="1737200170358" duration="2740000" />
     </task>
     <servers />
   </component>
