@@ -5,27 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/UserDTO$UserDTOBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/requests/SignInRequest$SignInRequestBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/requests/SignInRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/requests/SignInRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/risk-assessment-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/risk-assessment-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/risk-assessment-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/risk-assessment-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.riskassessment.RiskAssessmentApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.riskassessment.RiskAssessmentApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.example.riskassessment.RiskAssessmentApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.example.riskassessment.RiskAssessmentApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/repository/RiskDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/repository/RiskDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Table.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +61,11 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RunManager">
@@ -90,7 +92,14 @@
       <workItem from="1736940899159" duration="600000" />
       <workItem from="1736955043187" duration="130000" />
       <workItem from="1737008063904" duration="637000" />
-      <workItem from="1737009180518" duration="128000" />
+      <workItem from="1737009180518" duration="414000" />
+      <workItem from="1737015808769" duration="40000" />
+      <workItem from="1737015857990" duration="1234000" />
+      <workItem from="1737025603170" duration="739000" />
+      <workItem from="1737035569214" duration="332000" />
+      <workItem from="1737136996348" duration="4115000" />
+      <workItem from="1737175749266" duration="5764000" />
+      <workItem from="1737200170358" duration="2740000" />
     </task>
     <servers />
   </component>

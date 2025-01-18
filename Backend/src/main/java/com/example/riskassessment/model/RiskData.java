@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Table(name = "risk_data")
 public class RiskData {
 
+    @JsonProperty("id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -83,51 +84,53 @@ public class RiskData {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public String getGender() {
-        return this.gender;
+    // Getters
+    public Long getId() { return id; }
+    public int getAge() { return age; }
+    public String getGender() { return gender; }
+    public String getEducationLevel() { return educationLevel; }
+    public String getMaritalStatus() { return maritalStatus; }
+    public double getIncome() { return income; }
+    public int getCreditScore() { return creditScore; }
+    public double getLoanAmount() { return loanAmount; }
+    public String getLoanPurpose() { return loanPurpose; }
+    public String getEmploymentStatus() { return employmentStatus; }
+    public int getYearsAtCurrentJob() { return yearsAtCurrentJob; }
+    public String getPaymentHistory() { return paymentHistory; }
+    public double getDebtToIncomeRatio() { return debtToIncomeRatio; }
+    public double getAssetsValue() { return assetsValue; }
+    public int getNumberOfDependents() { return numberOfDependents; }
+    public String getCity() { return city; }
+    public String getState() { return state; }
+    public String getCountry() { return country; }
+    public int getPreviousDefaults() { return previousDefaults; }
+    public boolean isMaritalStatusChange() { return maritalStatusChange; }
+    public String getRiskRating() { return riskRating; }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public double getIncome() {
-        return this.income;
-    }
 
-    public String getLoanPurpose(){
-        return this.loanPurpose;
-    }
-
-    public double getLoanAmount() {
-        return this.loanAmount;
-    }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    public int getCreditScore() {
-        return this.creditScore;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setIncome(double income) {
-        this.income = income;
-    }
-
-    public void setLoanPurpose(String loanPurpose) {
-        this.loanPurpose = loanPurpose;
-    }
-
-    public void setLoanAmount(double loanAmount) {
-        this.loanAmount = loanAmount;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setCreditScore(int creditScore) {
-        this.creditScore = creditScore;
-    }
+    // Setters
+    public void setId(Long id) { this.id = id; }
+    public void setAge(int age) { this.age = age; }
+    public void setGender(String gender) { this.gender = gender; }
+    public void setEducationLevel(String educationLevel) { this.educationLevel = educationLevel; }
+    public void setMaritalStatus(String maritalStatus) { this.maritalStatus = maritalStatus; }
+    public void setIncome(double income) { this.income = income; }
+    public void setCreditScore(int creditScore) { this.creditScore = creditScore; }
+    public void setLoanAmount(double loanAmount) { this.loanAmount = loanAmount; }
+    public void setLoanPurpose(String loanPurpose) { this.loanPurpose = loanPurpose; }
+    public void setEmploymentStatus(String employmentStatus) { this.employmentStatus = employmentStatus; }
+    public void setYearsAtCurrentJob(int yearsAtCurrentJob) { this.yearsAtCurrentJob = yearsAtCurrentJob; }
+    public void setPaymentHistory(String paymentHistory) { this.paymentHistory = paymentHistory; }
+    public void setDebtToIncomeRatio(double debtToIncomeRatio) { this.debtToIncomeRatio = debtToIncomeRatio; }
+    public void setAssetsValue(double assetsValue) { this.assetsValue = assetsValue; }
+    public void setNumberOfDependents(int numberOfDependents) { this.numberOfDependents = numberOfDependents; }
+    public void setCity(String city) { this.city = city; }
+    public void setState(String state) { this.state = state; }
+    public void setCountry(String country) { this.country = country; }
+    public void setPreviousDefaults(int previousDefaults) { this.previousDefaults = previousDefaults; }
+    public void setMaritalStatusChange(boolean maritalStatusChange) { this.maritalStatusChange = maritalStatusChange; }
+    public void setRiskRating(String riskRating) { this.riskRating = riskRating; }
 }
