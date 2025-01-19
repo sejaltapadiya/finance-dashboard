@@ -1,43 +1,58 @@
----
-- name: Deploy TGID Project
+- name: Deploy Risk Assessment Project
   hosts: webserver
   become: yes
-  vars:
-    backend_jar_path: "/home/ubuntu/tgid/Backend/target/risk-assessment-0.0.1-SNAPSHOT.jar"
-    frontend_build_path: "/home/ubuntu/tgid/Frontend/build/"
-    app_port: 9192
 
   tasks:
-
-    - name: Stop existing backend service
-      ansible.builtin.shell: "pkill -f 'java.*risk-assessment'"
+    - name: Stop existing backend container (if exists)
+      shell: docker rm -f finance-dashboard-backend || true
       ignore_errors: yes
 
     - name: Deploy Backend
-      ansible.builtin.copy:
-        src: "{{ backend_jar_path }}"
-        dest: "/opt/risk-assessment.jar"
-        mode: '0755'
+      shell: docker run -d --name finance-dashboard-backend -p 9192:9192 sejal28/risk-backend
 
-    - name: Start Backend Service
-      ansible.builtin.shell: "nohup java -jar /opt/risk-assessment.jar --server.port={{ app_port }} &"
-      async: 0
-      poll: 0
-
-    - name: Remove existing Frontend
-      ansible.builtin.file:
-        path: "/var/www/html"
-        state: absent
+    - name: Stop existing frontend container (if exists)
+      shell: docker rm -f finance-dashboard-frontend || true
+      ignore_errors: yes
 
     - name: Deploy Frontend
-      ansible.builtin.copy:
-        src: "{{ frontend_build_path }}"
-        dest: "/var/www/html/"
-        mode: '0755'
+      shell: docker run -d --name finance-dashboard-frontend -p 3000:3000 sejal28/risk-frontend
 
-    - name: Restart Nginx
-      ansible.builtin.service:
+    - name: Restart NGINX
+      service:
         name: nginx
         state: restarted
 
+    - name: Pull Elasticsearch image
+      docker_image:
+        name: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+        source: pull
 
+    - name: Start Elasticsearch container
+      docker_container:
+        name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+        state: started
+        restart_policy: always
+        published_ports:
+          - "9200:9200"
+          - "9300:9300"
+        environment:
+          - discovery.type=single-node
+
+    - name: Pull SonarQube image
+      docker_image:
+        name: sonarqube:10.6-community
+        source: pull
+
+    - name: Start SonarQube container
+      docker_container:
+        name: sonarqube
+        image: sonarqube:10.6-community
+        state: started
+        restart_policy: always
+        published_ports:
+          - "9000:9000"
+        environment:
+          - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+        depends_on:
+          - elasticsearch
