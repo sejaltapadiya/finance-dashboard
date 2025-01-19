@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/repository/RiskDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/repository/RiskDataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/config/CorsConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/Components/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/Components/Table.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +80,7 @@
       <workItem from="1737035569214" duration="332000" />
       <workItem from="1737136996348" duration="4115000" />
       <workItem from="1737175749266" duration="5764000" />
-      <workItem from="1737200170358" duration="2740000" />
+      <workItem from="1737200170358" duration="3347000" />
     </task>
     <servers />
   </component>
