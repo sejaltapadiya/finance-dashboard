@@ -1,39 +1,71 @@
-version: '3.8'
+version: '3.9'
 
 services:
+  mysql_db:
+    image: mysql:8
+    container_name: risk-mysql-db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: current
+      MYSQL_USER: sejal
+      MYSQL_PASSWORD: sejal
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "sejal", "-psejal"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - risk-network
+
   backend:
     image: sejal28/risk-backend
-    build: ./Backend
+    container_name: risk-backend
     ports:
       - "9192:9192"
+    depends_on:
+      mysql_db:
+        condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_db:3306/current
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_db:3306/current?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: sejal
       SPRING_DATASOURCE_PASSWORD: sejal
     networks:
       - risk-network
-    depends_on:
-      - mysql_db
 
   frontend:
     image: sejal28/risk-frontend
-    build: ./Frontend
+    container_name: risk-frontend
     ports:
       - "3000:3000"
-    networks:
-      - risk-network
     depends_on:
       - backend
+    networks:
+      - risk-network
 
-  mysql_db:
-    image: mysql:8
-    ports:
-      - "3306:3306"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    container_name: elasticsearch
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: risk_db
-    volumes:
-      - mysql_data:/var/lib/mysql
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - risk-network
+
+  sonarqube:
+    image: sonarqube:10.6-community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    depends_on:
+      - elasticsearch
     networks:
       - risk-network
 
@@ -42,4 +74,3 @@ networks:
 
 volumes:
   mysql_data:
-
