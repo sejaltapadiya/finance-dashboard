@@ -88,6 +88,16 @@ public class UserController {
         return "WelcomeUSER";
     }
 
+    @GetMapping("/role")
+    public Map<String, String> getUserRole() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String role = authentication.getAuthorities().iterator().next().getAuthority();
+
+        Map<String, String> response = new HashMap<>();
+        response.put("role", role);
+        return response;
+    }
+
     private ResponseEntity<Object> generateResponse(String message, HttpStatus status, Object responseObj) {
         Map<String, Object> map = new HashMap<>();
         map.put("message", message);

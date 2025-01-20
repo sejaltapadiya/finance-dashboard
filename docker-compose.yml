@@ -78,3 +78,9 @@ networks:
 
 volumes:
   mysql_data:
+  sonarqube_data:
+    driver: local
+  sonarqube_logs:
+    driver: local
+  sonarqube_extensions:
+    driver: local
