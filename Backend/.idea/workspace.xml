@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/JWTFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/JwtGeneratorValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/JwtGeneratorValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/RiskDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/model/RiskData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/riskassessment/service/RiskDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/RiskDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/requests/SignInRequest$SignInRequestBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/dto/requests/SignInRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/implementations/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/model/RiskData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RiskDataRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/riskassessment/service/RiskDataService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/risk-assessment-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/risk-assessment-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.riskassessment.RiskAssessmentApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.example.riskassessment.RiskAssessmentApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/riskassessment/RiskAssessmentApplicationTests.class" beforeDir="false" />
-    </list>
+    <list default="true" id="6a1520e2-6040-42c3-9d60-d58a51090d5a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +68,7 @@
       <updated>1734447593088</updated>
       <workItem from="1734447594987" duration="110000" />
       <workItem from="1737300397351" duration="2321000" />
-      <workItem from="1737395763352" duration="2099000" />
+      <workItem from="1737395763352" duration="2758000" />
     </task>
     <servers />
   </component>
