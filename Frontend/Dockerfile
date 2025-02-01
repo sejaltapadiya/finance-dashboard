@@ -7,7 +7,6 @@ WORKDIR /Frontend
 # Copy package files and install dependencies
 COPY package*.json ./
 
-# Install dependencies
 RUN npm install \
     && npm install axios react-router-dom @mui/material @mui/icons-material @emotion/react @emotion/styled
 
@@ -16,4 +15,7 @@ COPY . .
 
 # Build the frontend for production
 RUN npm run build
-CMD ["npm", "run", "start"]
+
+# Serve the built app
+RUN npm install -g serve
+CMD ["serve", "-s", "build", "-l", "3000"]
