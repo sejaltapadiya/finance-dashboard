@@ -3,8 +3,6 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/sejaltapadiya/finance-dashboard.git'
-        SONARQUBE_HOST = 'http://localhost:9000' // Update if needed
-        SONARQUBE_PROJECT_KEY = 'finance-dashboard'
     }
 
     stages {
@@ -70,7 +68,7 @@ pipeline {
             steps {
                 script {
                     dir('./Backend') {
-                        withSonarQubeEnv('SonarQube Server') { // Uses SonarQube Jenkins Plugin
+                        withSonarQubeEnv('SonarQube') { // Uses SonarQube Jenkins Plugin
                             sh '''
                             mvn sonar:sonar \
                                 -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
