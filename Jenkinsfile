@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         GITHUB_REPO_URL = 'https://github.com/sejaltapadiya/finance-dashboard.git'
+        SONARQUBE_HOST = 'http://localhost:9000' // Update if needed
+        SONARQUBE_PROJECT_KEY = 'finance-dashboard'
     }
 
     stages {
@@ -11,7 +13,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    docker-compose down -v || true
+                    docker-compose down || true
                     docker network rm risk-network || true
                     docker rm -f elasticsearch || true
                     docker rm -f sonarqube || true
@@ -43,6 +45,44 @@ pipeline {
             }
         }
 
+        stage('Start Docker Compose Stack') {
+            steps {
+                script {
+                    sh '''
+                    docker-compose up -d
+                    '''
+                }
+            }
+        }
+
+        stage('Wait for MySQL & SonarQube to be ready') {
+            steps {
+                script {
+                    sh '''
+                    echo "Waiting for MySQL and SonarQube to be ready..."
+                    sleep 30
+                    '''
+                }
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    dir('./Backend') {
+                        withSonarQubeEnv('SonarQube Server') { // Uses SonarQube Jenkins Plugin
+                            sh '''
+                            mvn sonar:sonar \
+                                -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \
+                                -Dsonar.host.url=${SONARQUBE_HOST} \
+                                -Dsonar.login=${SONARQUBE_TOKEN}
+                            '''
+                        }
+                    }
+                }
+            }
+        }
+
         stage('Build Docker Images') {
             steps {
                 script {
@@ -63,27 +103,6 @@ pipeline {
                         sh 'docker push sejal28/risk-frontend:latest'
                         sh 'docker push sejal28/risk-backend:latest'
                     }
-                }
-            }
-        }
-
-        stage('Start Docker Compose Stack') {
-            steps {
-                script {
-                    sh '''
-                    docker-compose up -d
-                    '''
-                }
-            }
-        }
-
-        stage('Wait for MySQL to be ready') {
-            steps {
-                script {
-                    sh '''
-                    echo "Waiting for MySQL to be ready..."
-                    sleep 20
-                    '''
                 }
             }
         }
