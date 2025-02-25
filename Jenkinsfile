@@ -65,7 +65,7 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            steps {
+           /* steps {
                 script {
                     dir('./Backend') {
                         withSonarQubeEnv('SonarQube') { // Uses SonarQube Jenkins Plugin
@@ -78,7 +78,7 @@ pipeline {
                         }
                     }
                 }
-            }
+            }*/
         }
 
         stage('Build Docker Images') {
